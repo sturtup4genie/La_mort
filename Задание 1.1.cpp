@@ -6,26 +6,27 @@
 using namespace std;
 
 /**
-* \brief Математическая функция, рассчитывающая значение a
-* \param const double x - константа
-* \param const double y - константа
-* \param const double z - константа
-* \return значение a
+* \brief РњР°С‚РµРјР°С‚РёС‡РµСЃРєР°СЏ С„СѓРЅРєС†РёСЏ, СЂР°СЃСЃС‡РёС‚С‹РІР°СЋС‰Р°СЏ Р·РЅР°С‡РµРЅРёРµ a
+* \param const double x - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \param const double y - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \param const double z - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \return Р·РЅР°С‡РµРЅРёРµ a
 **/
 double GetA(const double x, const double y, const double z);
 
 /**
-* \brief Математическая функция, рассчитывающая значение b
-* \param const double x - константа
-* \param const double y - константа
-* \param const double z - константа
-* \return значение b
+* \brief РњР°С‚РµРјР°С‚РёС‡РµСЃРєР°СЏ С„СѓРЅРєС†РёСЏ, СЂР°СЃСЃС‡РёС‚С‹РІР°СЋС‰Р°СЏ Р·РЅР°С‡РµРЅРёРµ b
+* \param const double x - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \param const double y - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \param const double z - РєРѕРЅСЃС‚Р°РЅС‚Р°
+* \return Р·РЅР°С‡РµРЅРёРµ b
 **/
 double GetB(const double x, const double y, const double z);
 
+
 /**
-* \brief Точка входа в программу.
-* \return Код ошибки (0 - успех).
+* \brief РўРѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ.
+* \return РљРѕРґ РѕС€РёР±РєРё (0 - СѓСЃРїРµС…).
 */
 void main()
 {
