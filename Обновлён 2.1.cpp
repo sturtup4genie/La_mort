@@ -4,38 +4,38 @@
 using namespace std;
 
 /**
-*\brief функция вычисляет сумму.
-*\param a первое число.
-*\param b второе число.
-*\return сумму.
+*\brief С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ СЃСѓРјРјСѓ.
+*\param a РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+*\param b РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+*\return СЃСѓРјРјСѓ.
 */
 double getAmount(const double a, const double b)
 {
 	return a + b;
 }
 /**
-*\brief функция вычисляет разность.
-*\param a первое число.
-*\param b второе число.
-*\return разность.
+*\brief С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ СЂР°Р·РЅРѕСЃС‚СЊ.
+*\param a РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+*\param b РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+*\return СЂР°Р·РЅРѕСЃС‚СЊ.
 */
 double getDifference(const double a, const double b)
 {
 	return a - b;
 }
 /**
-*\brief функция вычисляет среднее арифметическое.
-*\param a первое число.
-*\param b второе число.
-*\return среднее арифметическое.
+*\brief С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ.
+*\param a РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ.
+*\param b РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ.
+*\return СЃСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ.
 */
 double getArithmeticMean(const double a, const double b)
 {
 	return (a + b)/2;
 }
 /**
-*\brief Выбор расчёта суммы(0),разности(1),среднего арифметического(2).
-*\return 0 в случае успеха
+*\brief Р’С‹Р±РѕСЂ СЂР°СЃС‡С‘С‚Р° СЃСѓРјРјС‹(0),СЂР°Р·РЅРѕСЃС‚Рё(1),СЃСЂРµРґРЅРµРіРѕ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРіРѕ(2).
+*\return 0 РІ СЃР»СѓС‡Р°Рµ СѓСЃРїРµС…Р°
 */
 enum class MathFunct
 {
@@ -48,25 +48,25 @@ void main()
 {
 	setlocale(LC_ALL, "ru");
 	int a, b;
-	cout << "Введите число a =  ";
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ a =  ";
 	cin >> a;
-	cout << "Введите число b = ";
+	cout << "Р’РІРµРґРёС‚Рµ С‡РёСЃР»Рѕ b = ";
 	cin >> b;
 	int action;
-	cout << "Введите выполняемое действие (Сумма = " << static_cast<int>(MathFunct::amount) << ", Разность = " << static_cast<int>(MathFunct::difference) << ", Среднее арифметическое = " << static_cast<int>(MathFunct::arithmeticMean)<<")";
+	cout << "Р’РІРµРґРёС‚Рµ РІС‹РїРѕР»РЅСЏРµРјРѕРµ РґРµР№СЃС‚РІРёРµ (РЎСѓРјРјР° = " << static_cast<int>(MathFunct::amount) << ", Р Р°Р·РЅРѕСЃС‚СЊ = " << static_cast<int>(MathFunct::difference) << ", РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ = " << static_cast<int>(MathFunct::arithmeticMean)<<")";
 	cin >> action;
 	const auto choice = static_cast<MathFunct>(action);
 	switch (choice)
 	{
 		
 	case MathFunct::amount:
-		cout << "Сумма равна = " << getAmount(a,b) << endl;
+		cout << "РЎСѓРјРјР° СЂР°РІРЅР° = " << getAmount(a,b) << endl;
 		break;
 	case MathFunct::difference:
-		cout << "Разность равна = " << getDifference(a,b) << endl;
+		cout << "Р Р°Р·РЅРѕСЃС‚СЊ СЂР°РІРЅР° = " << getDifference(a,b) << endl;
 		break;
 	case MathFunct::arithmeticMean:
-		cout << "Среднее арифметическое равно = " << getArithmeticMean(a, b) << endl;
+		cout << "РЎСЂРµРґРЅРµРµ Р°СЂРёС„РјРµС‚РёС‡РµСЃРєРѕРµ СЂР°РІРЅРѕ = " << getArithmeticMean(a, b) << endl;
 		break;
 	default:
 	}
