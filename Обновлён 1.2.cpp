@@ -5,21 +5,21 @@
 using namespace std;
 
 /**
-*\brief функция вычисляет площадь треугольника.
-*\param cathet1 первый катет треугольника.
-*\param cathet2 второй катет треугольника.
-*\return площадь треугольника.
+*\brief С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ РїР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\param cathet1 РїРµСЂРІС‹Р№ РєР°С‚РµС‚ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\param cathet2 РІС‚РѕСЂРѕР№ РєР°С‚РµС‚ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\return РїР»РѕС‰Р°РґСЊ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
 */
 double Square(const double cathet1, const double cathet2)
 {
 	return cathet1 * 0, 5 * cathet2;
 }
 /**
-*\brief функция вычисляет периметр треугольника.
-*\param cathet1 первый катет треугольника.
-*\param cathet2 второй катет треугольника.
-*\param cathet3 третий катет треугольника.
-*\return периметр.
+*\brief С„СѓРЅРєС†РёСЏ РІС‹С‡РёСЃР»СЏРµС‚ РїРµСЂРёРјРµС‚СЂ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\param cathet1 РїРµСЂРІС‹Р№ РєР°С‚РµС‚ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\param cathet2 РІС‚РѕСЂРѕР№ РєР°С‚РµС‚ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\param cathet3 С‚СЂРµС‚РёР№ РєР°С‚РµС‚ С‚СЂРµСѓРіРѕР»СЊРЅРёРєР°.
+*\return РїРµСЂРёРјРµС‚СЂ.
 */
 double Perimeter(const double cathet1, const double cathet2, const double cathet3)
 {
@@ -27,19 +27,19 @@ double Perimeter(const double cathet1, const double cathet2, const double cathet
 }
 
 /**
-*\brief точка входа в программу.
-*\return 0 в случае успеха.
+*\brief С‚РѕС‡РєР° РІС…РѕРґР° РІ РїСЂРѕРіСЂР°РјРјСѓ.
+*\return 0 РІ СЃР»СѓС‡Р°Рµ СѓСЃРїРµС…Р°.
 */
 void main()
 {
 	setlocale(LC_ALL, "ru");
 	double cathet1;
-	cout << "Введите первый катет ";
+	cout << "Р’РІРµРґРёС‚Рµ РїРµСЂРІС‹Р№ РєР°С‚РµС‚ ";
 	cin >> cathet1;
 	double cathet2;
-	cout << "Введите второй катет ";
+	cout << "Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕР№ РєР°С‚РµС‚ ";
 	cin >> cathet2;
 	double cathet3 = (sqrt(pow(cathet1, 2) + pow(cathet2, 2)));
-	cout << "Площадь равна " << Square(cathet1, cathet2) << " см" << endl;
-	cout << "Периметр равен " << Perimeter(cathet1, cathet2, cathet3) << " см" << endl;
+	cout << "РџР»РѕС‰Р°РґСЊ СЂР°РІРЅР° " << Square(cathet1, cathet2) << " СЃРј" << endl;
+	cout << "РџРµСЂРёРјРµС‚СЂ СЂР°РІРµРЅ " << Perimeter(cathet1, cathet2, cathet3) << " СЃРј" << endl;
 }
