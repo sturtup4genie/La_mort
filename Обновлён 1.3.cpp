@@ -9,6 +9,7 @@ using namespace std;
 *\param c удельная теплоёмкость
 *\param t1 текущая температура.
 *\param t2 температура плавления.
+*\param 1000 перевод в килоджоули.
 *\return количество теплоты при нагревании.
 **/
 double heating(double m, const double c, const double t1, const double t2)
@@ -19,6 +20,7 @@ double heating(double m, const double c, const double t1, const double t2)
 * \brief функция вычисляет количество теплоты при плавлении.
 *\param lambda удельная теплота плавления.
 *\param m масса.
+*\param 1000 перевод в килоджоули.
 *\return количество теплоты при плавлении.
 */
 double melting(const double lambda, double m)
@@ -27,20 +29,17 @@ double melting(const double lambda, double m)
 }
 /**
 *\brief Точка входа в программу.
+*\param m масса.
+*\param t1 текущая температура.
+*\param t2 температура плавления.
+*\param c удельная теплоёмкость .
+*\param lambda удельная теплота плавления.
 *\return 0 в случае успеха.
 */
 void main()
 {
 	setlocale(LC_ALL, "ru");
-	/**
-	*\brief
-	*\param m масса.
-	*\param t1 текущая температура.
-	*\param t2 температура плавления.
-	*\param c удельная теплоёмкость .
-	*\param lambda удельная теплота плавления.
-	*\return 0 в случае успеха.
-	**/
+	
 	double m;
 	const double t1 = -10;
 	const double t2 = 0;
