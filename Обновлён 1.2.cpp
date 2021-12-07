@@ -3,7 +3,6 @@
 #include <iostream>
 
 using namespace std;
-
 /**
 *\brief функция вычисляет площадь треугольника.
 *\param cathet1 первый катет треугольника.
@@ -13,6 +12,16 @@ using namespace std;
 double Square(const double cathet1, const double cathet2)
 {
 	return cathet1 * 0, 5 * cathet2;
+}
+/**
+*\brief функция вычисляет третий катет треугольника.
+*\param cathet1 первый катет треугольника.
+*\param cathet2 второй катет треугольника.
+*\return третий катет треугольника.
+*/
+double Thirdcathet(const double cathet1, const double cathet2)
+{
+	return(sqrt(pow(cathet1, 2) + pow(cathet2, 2)));
 }
 /**
 *\brief функция вычисляет периметр треугольника.
@@ -38,8 +47,9 @@ void main()
 	cin >> cathet1;
 	double cathet2;
 	cout << "Введите второй катет ";
-	cin >> cathet2;
-	double cathet3 = (sqrt(pow(cathet1, 2) + pow(cathet2, 2)));
+	cin >> cathet2;	
+	double cathet3;
+	cathet3=Thirdcathet(cathet1,cathet2);
 	cout << "Площадь равна " << Square(cathet1, cathet2) << " см" << endl;
 	cout << "Периметр равен " << Perimeter(cathet1, cathet2, cathet3) << " см" << endl;
 }
