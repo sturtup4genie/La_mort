@@ -12,10 +12,7 @@ using namespace std;
 *\param 1000 перевод в килоджоули.
 *\return количество теплоты при нагревании.
 **/
-double heating(double m, const double c, const double t1, const double t2)
-{
-	return(m*c*(t2 - t1)) / 1000;
-}
+double heating(double m, const double c, const double t1, const double t2);
 /**
 * \brief функция вычисляет количество теплоты при плавлении.
 *\param lambda удельная теплота плавления.
@@ -23,10 +20,7 @@ double heating(double m, const double c, const double t1, const double t2)
 *\param 1000 перевод в килоджоули.
 *\return количество теплоты при плавлении.
 */
-double melting(const double lambda, double m)
-{
-	return(lambda*m) / 1000;
-}
+double melting(const double lambda, double m);
 /**
 *\brief Точка входа в программу.
 *\param m масса.
@@ -48,4 +42,14 @@ void main()
 	cout << "Введите массу льда в килограммах" << endl;
 	cin >> m;
 	cout << "Общая энергия " << (heating(m, c, t1, t2)) + (melting(lambda, m)) << "кДж" << endl;
+}
+
+double heating(double m, const double c, const double t1, const double t2)
+{
+	return(m*c*(t2 - t1)) / 1000;
+}
+
+double melting(const double lambda, double m)
+{
+	return(lambda*m) / 1000;
 }
