@@ -5,14 +5,6 @@
 
 
 using namespace std;
-
-/**
-* \brief Возможность расчета функции в точке
-* \param x Входной параметр - точка x
-* \return true, если функция определена в заданной точке x
-*/
-bool IsCalculated(const double x);
-
 /**
 * \brief Расчет функции в точке x
 * \param x Входной параметр - точка x
@@ -34,7 +26,7 @@ void main()
 	cout << "  x" << setw(15) << "y\n";
 	while ((x < rightBound) || (abs(x - rightBound) < step))
 	{
-		if (IsCalculated(x))
+		if (x)
 		{
 			const auto y = Calculation(x);
 			cout << setw(10) << setprecision(2) << x << setw(15)
@@ -42,8 +34,7 @@ void main()
 		}
 		else
 		{
-			cout << setw(10) << setprecision(2) << x << setw(15)
-				<< "not defined \n";
+			cout << setw(10) << setprecision(2) << x << setw(15);
 		}
 		x += step;
 	}
@@ -54,7 +45,3 @@ double Calculation(const double x)
 	return cos(x) - exp(-(pow(x, 2) / 2) + x - 1);
 }
 
-bool IsCalculated(const double x)
-{
-	return (abs(x) > numeric_limits<long double>::epsilon());
-}
