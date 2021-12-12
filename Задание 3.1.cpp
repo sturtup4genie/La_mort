@@ -23,7 +23,7 @@ void main()
 
 	auto x = leftBound;
 	cout << "  x" << setw(15) << "y\n";
-	while (x <= rightBound)
+	while ((x < rightBound) || (abs(x - rightBound) < step))
 	{
 		const auto y = Calculation(x);
 		cout << setw(10) << setprecision(2) << x << setw(15)<< setprecision(5) << y << '\n';
