@@ -23,7 +23,7 @@ void main()
 
 	auto x = leftBound;
 	cout << "  x" << setw(15) << "y\n";
-	while ((x < rightBound) || (abs(x - rightBound) < step))
+	while (x <= rightBound)
 	{
 		const auto y = Calculation(x);
 		cout << setw(10) << setprecision(2) << x << setw(15)<< setprecision(5) << y << '\n';
@@ -35,4 +35,3 @@ double Calculation(const double x)
 {
 	return cos(x) - exp(-(pow(x, 2) / 2) + x - 1);
 }
-
