@@ -1,4 +1,3 @@
-#define _USE_MATH_DEFINES
 #include <iostream>
 #include <cmath>
 #include <iomanip>
@@ -26,16 +25,8 @@ void main()
 	cout << "  x" << setw(15) << "y\n";
 	while ((x < rightBound) || (abs(x - rightBound) < step))
 	{
-		if (x)
-		{
-			const auto y = Calculation(x);
-			cout << setw(10) << setprecision(2) << x << setw(15)
-				<< setprecision(5) << y << '\n';
-		}
-		else
-		{
-			cout << setw(10) << setprecision(2) << x << setw(15);
-		}
+		const auto y = Calculation(x);
+		cout << setw(10) << setprecision(2) << x << setw(15)<< setprecision(5) << y << '\n';
 		x += step;
 	}
 }
