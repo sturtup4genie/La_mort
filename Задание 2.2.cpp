@@ -6,7 +6,7 @@ const double a = 2;
 
 /**
 *\brief математическая функция, работающая для ограничений x > a.
-*\param const double x - значение параметра x.
+*\param  x - значение параметра x.
 *\return возвращает значение функции.
 **/
 
@@ -14,7 +14,7 @@ double getFunctionFirst(const double x);
 
 /**
 *\brief математическая функция, работающая для ограничений x <= a.
-*\param const double x - значение параметра x.
+*\param x - значение параметра x.
 *\return возвращает значение функции.
 **/
 
@@ -27,6 +27,7 @@ double getFunctionSecond(const double x);
 
 int main()
 {
+	setlocale(LC_ALL, "ru");
 	double x;
 	std::cout << "Введите значение = ";
 	std::cin >> x;
@@ -36,11 +37,7 @@ int main()
 	{
 		y = getFunctionSecond(x);
 	}
-	else if (x > a)
-	{
-		y = 1;
-	}
-	else
+	else (x > a);
 	{
 		y = getFunctionFirst(x);
 	}
