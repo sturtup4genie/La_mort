@@ -76,7 +76,9 @@ int main()
 	std::cout << "Введите размер массива" << std::endl;
 	std::cin >> size;
 	int* arr = new int[size];
-	std::cout << "1 - Сгенерировать массив\n2 - Заполнить массив вручную\n";
+	std::cout << "Выберите действие";
+	<<"Заполнить массив вручную -"<< static_cast<int>(type_of_filling::user)
+	<<"Заполнить массив автоматически -"<< static_cast<int>(type_of_filling::rand)
 	std::cin >> choice;
 	const auto filling = static_cast<type_of_filling>(choice);
 	const int left = -100;
