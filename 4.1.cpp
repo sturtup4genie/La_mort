@@ -135,8 +135,6 @@ void filling_in_manually(int* arr, const size_t size)
 	{
 		std::cin >> arr[i];
 	}
-	std::cout << "Значения массива" << std::endl;
-	print_array(arr,size);
 }
 
 
