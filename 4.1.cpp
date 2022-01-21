@@ -1,5 +1,7 @@
 #include <iostream>
-#include <ctime>
+#include <random>
+using namespace std;
+
 /**
 * \brief перечислимый тип способов задания массива
 */
@@ -19,7 +21,7 @@ enum class type_of_filling
 * \param arr массив
 * \param size размер массива
 **/
-void automatic_filling(int* arr, const size_t size);
+void automatic_filling(int* arr, const size_t size,const int min,const int max);
 /**
 * \brief заполнение массива вручную
 * \param arr массив
@@ -60,23 +62,29 @@ void user_input(int* arr, const size_t size);
 * \param size Размер массива
 **/
 void print(int* arr, const size_t size);
+/**
+* \brief вывод значений массива
+* \param arr Массив
+* \param size Размер массива
+**/
+void print_array(int*arr,const size_t size);
 
 int main()
 {
 	setlocale(LC_ALL, "ru");
-	srand(time(NULL));
-	int size;
+	size_t size,choice;
 	std::cout << "Введите размер массива" << std::endl;
 	std::cin >> size;
 	int* arr = new int[size];
 	std::cout << "1 - Сгенерировать массив\n2 - Заполнить массив вручную\n";
-	int choice;
 	std::cin >> choice;
 	const auto filling = static_cast<type_of_filling>(choice);
+	const int left = -100;
+	const int right = 100;
 	switch (filling)
 	{
 	case type_of_filling::rand:
-		automatic_filling(arr, size);
+		automatic_filling(arr, size,left,right);
 		print(arr, size);
 		break;
 	case type_of_filling::user:
@@ -106,12 +114,12 @@ int main()
 	return 0;
 }
 
-void automatic_filling(int* arr, const size_t size)
+void automatic_filling(int* arr, const size_t size,const int min,const int max)
 {
-	for (size_t i = 0; i < size; i++)
-	{
-		arr[i] = rand() % 20;
-	}
+	random_device rd;
+	mt19937 gen(rd());
+	const uniform_real_distribution<int>dist(min,max);
+
 	for (size_t i = 0; i < size; i++)
 	{
 		std::cout << arr[i] << std::endl;
@@ -126,10 +134,7 @@ void filling_in_manually(int* arr, const size_t size)
 		std::cin >> arr[i];
 	}
 	std::cout << "Значения массива" << std::endl;
-	for (int i = 0; i < size; i++)
-	{
-		std::cout << arr[i] << ' ';
-	}
+	print_array(arr,size);
 }
 
 
@@ -155,24 +160,22 @@ void get_elements(int* arr, const size_t size)
 			arr[i] = arr[i] * arr[size];
 		}
 	}
-	for (size_t i = 0; i < size; i++){
-		std::cout << arr[i] << std::endl;
-	}
+	print_array(arr,size);
 }
 
 
 void get_pair(int* arr, const size_t size, int input)
 {
-	bool k = false;
+	bool pairExists=false;
 	for (size_t i = 1; i < size; i++)
 	{
 		if ((arr[i] * arr[i - 1] < 0) && (arr[i] + arr[i - 1]<input))
 		{
 			std::cout << "Это пара под номером: " << i << " " << i - 1 << " ";
-			k = true;
+			pairExists = true;
 		}
 	}
-	if (k == false)
+	if (!pairExists)
 	{
 		std::cout << "Таких пар нет ";
 	}
@@ -193,4 +196,11 @@ void print(int* arr, const size_t size)
 		std::cout << arr[i] << ";";
 	}
 	std::cout << arr[size - 1] << "}";
+}
+void print_array(int*arr,const size_t size)
+{
+	for (int i = 0; i < size; i++)
+	{
+		std::cout << arr[i] << ' ';
+	}
 }
